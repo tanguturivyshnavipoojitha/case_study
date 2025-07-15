@@ -1,5 +1,5 @@
 name: SonarQube SaaS version i.e SonarCloud
-# on: 
+# on:
 #   push:
 #     branches:
 #       - main
@@ -15,9 +15,9 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: 21
-          distribution: 'zulu' 
+          distribution: 'zulu'
       - name: Build and analyze
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=raghugaorgkey -Dsonar.study2=study2_case
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.organization=study2 -Dsonar.projectKey=study2_case
